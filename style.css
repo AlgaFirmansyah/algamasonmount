@@ -307,39 +307,59 @@ img {
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
+    position: relative;
+    z-index: 1001;
   }
 
   .main-nav {
-    position: relative;
+    position: static;
   }
 
   .main-nav ul {
-    display: none;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;        /* menyamping */
+    flex-wrap: wrap;
+    align-items: center;
     gap: 0;
-    position: absolute;
-    top: calc(100% + 8px);
+    position: fixed;            /* fixed biar tidak geser ikut scroll */
+    top: 60px;                  /* sejajar baris hamburger */
+    left: 0;
     right: 0;
-    width: 220px;
     background-color: #1a3320;
-    border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-    overflow: hidden;
-    z-index: 999;
+    padding: 0.5rem 0.75rem;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+
+    /* Sembunyikan secara default */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.2s, transform 0.2s;
   }
 
   .main-nav ul.nav-open {
-    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 
   .main-nav ul li a {
     display: block;
-    padding: 0.85rem 1.2rem;
-    font-size: 0.92rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 0.4rem 0.7rem;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    border-radius: 6px;
+    color: #d4e9d0;
+  }
+
+  .main-nav ul li a:hover {
+    background-color: #2e5c38;
+    color: #fff;
   }
 
   .main-nav ul li:last-child a {
-    border-bottom: none;
+    background-color: #4a9058;
+    color: #fff;
+    font-weight: 600;
   }
 }
