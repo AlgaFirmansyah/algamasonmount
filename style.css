@@ -1,0 +1,263 @@
+/* ========== RESET & BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f2;
+  color: #333333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.section-title {
+  color: #2f4f36;
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  border-left: 5px solid #4c7a52;
+  padding-left: 0.6rem;
+}
+
+/* ========== HEADER ========== */
+.site-header {
+  background-color: #2f4f36;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.logo-area .logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.logo-area .tagline {
+  font-size: 0.9rem;
+  color: #cfe3d1;
+}
+
+/* ========== NAV ========== */
+.main-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.main-nav a {
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.main-nav a:hover {
+  background-color: #4c7a52;
+  color: #ffffff;
+}
+
+/* ========== MAIN LAYOUT (FLEXBOX) ========== */
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  align-items: flex-start;
+}
+
+.content-utama {
+  flex: 3 1 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ========== MOUNTAIN CARDS (ARTICLE) ========== */
+.mountain-card {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mountain-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.mountain-photo {
+  flex: 1 1 260px;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.mountain-info {
+  flex: 2 1 320px;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mountain-info h3 {
+  color: #2f4f36;
+  font-size: 1.3rem;
+}
+
+.mountain-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #4c7a52;
+}
+
+.mountain-desc,
+.mountain-story {
+  font-size: 0.95rem;
+  color: #444444;
+}
+
+/* ========== ASIDE / SIDEBAR ========== */
+.sidebar {
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  gap: 0.6rem;
+  align-self: flex-start;
+}
+
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #cfe3d1;
+  margin-bottom: 0.5rem;
+}
+
+.profile-name {
+  color: #2f4f36;
+  font-size: 1.2rem;
+}
+
+.profile-status,
+.profile-interest {
+  font-size: 0.9rem;
+  color: #4c7a52;
+}
+
+.profile-desc,
+.profile-note {
+  font-size: 0.9rem;
+  color: #555555;
+  margin-top: 0.4rem;
+}
+
+.tips-box {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+.tips-box h3 {
+  color: #2f4f36;
+  margin-bottom: 0.6rem;
+  font-size: 1.05rem;
+}
+
+.tips-box ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  color: #444444;
+}
+
+.tips-box li::before {
+  content: "🌿 ";
+}
+
+/* ========== FOOTER ========== */
+.site-footer {
+  background-color: #2f4f36;
+  color: #ffffff;
+  text-align: center;
+  padding: 1.2rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.9rem;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav ul {
+    justify-content: flex-start;
+  }
+
+  .main-container {
+    flex-direction: column;
+  }
+
+  .mountain-card {
+    flex-direction: column;
+  }
+
+  .mountain-photo {
+    height: 200px;
+  }
+
+  .sidebar {
+    align-self: stretch;
+  }
+}
