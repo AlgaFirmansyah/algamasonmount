@@ -155,5 +155,22 @@
     <p>Dibuat sebagai project pembelajaran Web Development.</p>
   </footer>
 
+<script>
+  const btn = document.getElementById('hamburgerBtn');
+  const navUl = btn.nextElementSibling;
+
+  btn.addEventListener('click', function () {
+    const isOpen = navUl.classList.toggle('nav-open');
+    btn.classList.toggle('is-active', isOpen);
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('nav')) {
+      navUl.classList.remove('nav-open');
+      btn.classList.remove('is-active');
+    }
+  });
+</script>
+  
 </body>
 </html>
