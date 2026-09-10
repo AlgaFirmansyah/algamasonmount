@@ -151,6 +151,11 @@ img {
 .mountain-story {
   font-size: 0.95rem;
   color: #444444;
+  margin-bottom: 0.8rem;
+}
+
+.mountain-story:last-child {
+  margin-bottom: 0;
 }
 
 /* ========== ASIDE / SIDEBAR ========== */
