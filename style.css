@@ -371,5 +371,71 @@ img {
     background-color: #4a9058;
     color: #fff;
     font-weight: 600;
+
+    /* ========== HAMBURGER MENU & MOBILE NAV ========== */
+
+/* Sembunyikan tombol hamburger di layar besar (desktop) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Memberikan bentuk dan warna pada 3 garis (span) */
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animasi sederhana saat tombol aktif (membentuk silang 'X') */
+.hamburger.is-active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.is-active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Aturan untuk tampilan mobile (di bawah 768px) */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hamburger {
+    display: flex; /* Tampilkan hamburger di mobile */
+  }
+
+  .main-nav {
+    width: 100%;
+  }
+
+  .main-nav ul {
+    display: none; /* Sembunyikan menu link secara default */
+    flex-direction: column;
+    width: 100%;
+    background-color: #243f2b;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 0.8rem;
+  }
+
+  /* Tampilkan menu saat kelas 'nav-open' ditambahkan oleh JavaScript */
+  .main-nav.nav-open ul {
+    display: flex;
   }
 }
